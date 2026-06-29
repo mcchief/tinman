@@ -29,10 +29,10 @@
 const CONFIG={
   eventSetupUrl:'',
   statusHistoryUrl:'',
-  playersUrl:'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ31fvbL0m_kRFUXEQXXCUL2_UuuR0CH6lQeGCStnlBahy645Cw1yXw9H34QcByoQ/pub?gid=1214301345&single=true&output=csv',
-  settingsUrl:'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ31fvbL0m_kRFUXEQXXCUL2_UuuR0CH6lQeGCStnlBahy645Cw1yXw9H34QcByoQ/pub?gid=1441391616&single=true&output=csv',
-  tinmanUrl:'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ31fvbL0m_kRFUXEQXXCUL2_UuuR0CH6lQeGCStnlBahy645Cw1yXw9H34QcByoQ/pub?gid=168353249&single=true&output=csv',
-  vaultsUrl:'https://docs.google.com/spreadsheets/d/e/2PACX-1vQ31fvbL0m_kRFUXEQXXCUL2_UuuR0CH6lQeGCStnlBahy645Cw1yXw9H34QcByoQ/pub?gid=968056196&single=true&output=csv'
+  playersUrl:'https://docs.google.com/spreadsheets/d/e/2PACX-1vTPnLh919aTJvwKy0LdY3t8gbF5Iieac4js1NWuJRFHQla0cfG5b--tx2_ES6EWXw/pub?gid=2124429844&single=true&output=csv',
+  settingsUrl:'https://docs.google.com/spreadsheets/d/e/2PACX-1vTPnLh919aTJvwKy0LdY3t8gbF5Iieac4js1NWuJRFHQla0cfG5b--tx2_ES6EWXw/pub?gid=349970088&single=true&output=csv',
+  tinmanUrl:'https://docs.google.com/spreadsheets/d/e/2PACX-1vTPnLh919aTJvwKy0LdY3t8gbF5Iieac4js1NWuJRFHQla0cfG5b--tx2_ES6EWXw/pub?gid=428253506&single=true&output=csv',
+  vaultsUrl:'https://docs.google.com/spreadsheets/d/e/2PACX-1vTPnLh919aTJvwKy0LdY3t8gbF5Iieac4js1NWuJRFHQla0cfG5b--tx2_ES6EWXw/pub?gid=1187012849&single=true&output=csv'
 };
 let players=[],settings={targets:{},vaultLevels:{},threshold:.6},tinman=[],vaults=[],eventSetup=[],statusHistory=[],events=[],selectedEvent='',mode='combined',charts={};
 function parseCSVLine(line){const out=[];let cur='',q=false;for(let i=0;i<line.length;i++){const c=line[i],n=line[i+1];if(c==='"'&&q&&n==='"'){cur+='"';i++}else if(c==='"'){q=!q}else if(c===','&&!q){out.push(cur);cur=''}else cur+=c}out.push(cur);return out}
